@@ -13,7 +13,7 @@ test.beforeEach(async ({ page }) => {
     const homepage = new HomePage(page);
 
     await homepage.gotoHomepage();
-    await homepage.userLogin("temp-govtech", "bgPB3Aw3SomeGvtF@lk!");
+    await homepage.userLogin("", "");
 });
 
 test('User Story 1 – Eligibility Section Happy path', async ({ page }) => {
@@ -35,10 +35,10 @@ test('User Story 1 – Eligibility Section Happy path', async ({ page }) => {
 
     // Expects Manual Log In header to be displayed.
     await expect(page.getByRole('heading', { name: 'Manual Log In' })).toBeVisible();
-    await loginpage.inputEID("BGPQETECH");
-    await loginpage.inputUserID("S1234567A");
-    await loginpage.inputUserRole("Acceptor");
-    await loginpage.inputFullName("Tan Ah Kow");
+    await loginpage.inputEID("");
+    await loginpage.inputUserID("");
+    await loginpage.inputUserRole("");
+    await loginpage.inputFullName("");
     await loginpage.clickLogin();
 
     // Expects page to have a header link with the name of Business Grants Portal.
